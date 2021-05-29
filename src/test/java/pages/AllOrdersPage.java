@@ -23,12 +23,12 @@ public class AllOrdersPage extends Page {
         super(driver);
     }
 
-    public SearchBoxPage clickOnArrowToSeeAllFilterValues(String comboBoxName) {
+    public SearchBoxPage clickOnArrowToSeeAllFilterValues(String dropdownListName) {
         utils.waitUntilElementVisible(driver, comboBoxes);
         List<WebElement> elements = driver.findElements(comboBoxes);
         for (WebElement element : elements) {
             String text = element.findElement(By.cssSelector("input")).getAttribute("value");
-            if (text.equals(comboBoxName)) {
+            if (text.equals(dropdownListName)) {
                 WebElement searchedElement = element.findElement(By.cssSelector("div.v-filterselect-button"));
                 searchedElement.click();
             }
