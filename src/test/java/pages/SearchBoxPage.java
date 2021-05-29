@@ -1,3 +1,5 @@
+package pages;
+
 import lombok.SneakyThrows;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -6,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import templates.Page;
 
 import java.util.List;
 

@@ -1,13 +1,17 @@
+package pages;
+
+import common.Utils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import templates.Page;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class WszystkieZlecenia extends Page {
+public class AllOrdersPage extends Page {
     @FindBy(css = "div.v-button-link > span> span")
     WebElement buttonWithDateRanges;
 
@@ -15,7 +19,7 @@ public class WszystkieZlecenia extends Page {
 
     private By comboBoxes = By.xpath("//div[(@role = 'combobox')]");
 
-    WszystkieZlecenia(WebDriver driver) {
+    AllOrdersPage(WebDriver driver) {
         super(driver);
     }
 

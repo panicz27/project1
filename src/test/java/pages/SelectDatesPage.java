@@ -1,7 +1,10 @@
+package pages;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import templates.Page;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -18,7 +21,7 @@ public class SelectDatesPage extends Page {
     WebElement zmienButton;
 
 
-    SelectDatesPage(WebDriver driver) {
+    public SelectDatesPage(WebDriver driver) {
         super(driver);
     }
 
@@ -32,9 +35,9 @@ public class SelectDatesPage extends Page {
         return new CalendarPage(driver);
     }
 
-    public WszystkieZlecenia clickOnZmienButton() {
+    public AllOrdersPage clickOnZmienButton() {
         zmienButton.click();
-        return new WszystkieZlecenia(driver);
+        return new AllOrdersPage(driver);
     }
 
     public void assertInputsHaveCorrectValues(LocalDate startDate, LocalDate endDate) {
@@ -55,6 +58,4 @@ public class SelectDatesPage extends Page {
         String actualDate = inputs.get(1).getAttribute("value");
         Assert.assertEquals(expectedDate, actualDate);
     }
-
-
 }

@@ -1,5 +1,11 @@
+package tests;
+
 import org.junit.Before;
 import org.junit.Test;
+import pages.LoginPage;
+import pages.SelectDatesPage;
+import templates.WebTest;
+
 import java.time.LocalDate;
 
 public class FireUpTest extends WebTest {
@@ -16,11 +22,11 @@ public class FireUpTest extends WebTest {
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage
-                .setLogin(LOGIN)
-                .setPassword(PASSWORD)
+                .setLogin(WebTest.LOGIN)
+                .setPassword(WebTest.PASSWORD)
                 .clickOnLoginButton()
-                .clickOnZlecenia()
-                .clickOnWszystkieZlecenia()
+                .clickOnOrders()
+                .clickOnAllOrders()
                 .clickOnArrowToSeeAllFilterValues("Wybierz filtr")
                 .clickOnCorrectFilterName("Data utworzenia");
 
